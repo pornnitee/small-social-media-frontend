@@ -7,9 +7,10 @@ import { Post } from "../../types/post";
 import { useEffect, useState } from "react";
 import { usePosts } from "../../api/post/getPosts";
 import { useDeletePost } from "../../api/post/deletePost";
+import Spinner from "../Spinner";
 
 export default function PostsList() {
-  const { data } = usePosts();
+  const { data, isLoading } = usePosts();
   const { mutate: onDelete } = useDeletePost();
   const queryClient = useQueryClient();
   const [userId, setUserId] = useState<string | null>(null);
@@ -37,15 +38,20 @@ export default function PostsList() {
     }
   };
 
+  if (isLoading) return <Spinner />;
+
   return (
-    <div className="flex min-h-screen flex-col px-12 py-8 overflow-x-auto">
-      <div className="self-end">
+    <div
+      className="flex flex-col px-12 py-8 overflow-x-auto relative"
+      style={{ height: " calc(100vh - 56px)" }}
+    >
+      <div className="self-end fixed bottom-4">
         <Link href={userId ? "/add-post" : "/sign-in"}>
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2 mb-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white text-xl font-sm bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300  rounded-full w-12 h-12 flex items-center justify-center  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            + Post
+            +
           </button>
         </Link>
       </div>
