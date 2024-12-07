@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import PostForm from "../../components/PostForm";
+import PostForm from "../../components/posts/PostForm";
 import { useCreatePost } from "../../api/post/addPost";
 import { PostFormInput } from "../../types/post";
 

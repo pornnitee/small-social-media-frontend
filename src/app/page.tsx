@@ -1,7 +1,7 @@
 "use client";
 
-import Posts from "../components/Post";
+import PostsList from "../components/posts/PostsList";
 
 export default function Home() {
-  return <Posts />;
+  return <PostsList />;
 }

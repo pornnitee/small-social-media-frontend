@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSignIn } from "../../api/auth/signIn";
-import SignInForm from "../../components/SignInForm";
+import SignInForm from "../../components/auth/SignInForm";
 
 type Payload = {
   email: string;

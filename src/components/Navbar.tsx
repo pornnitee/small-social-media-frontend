@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { useSignOut } from "../api/auth/signOut";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "@/lib/providers/authProvider";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { mutate: onSignOut } = useSignOut();
+  const { isAuth } = useContext(AuthContext);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const [value, setValue] = useState<{
     userId: string | null;
@@ -33,7 +38,7 @@ const Navbar = () => {
             </Link>
           </li>
         </div>
-        {value.userId && (
+        {isAuth ? (
           <div className="flex space-x-4 ">
             <div className="flex items-center space-x-2">
               <div className="relative group">
@@ -55,6 +60,14 @@ const Navbar = () => {
               Logout
             </div>
           </div>
+        ) : (
+          isHome && (
+            <div className="text-white hover:text-gray-300 cursor-pointer">
+              <Link href="/sign-in" className="text-white  hover:text-gray-300">
+                Sign In
+              </Link>
+            </div>
+          )
         )}
       </ul>
     </nav>

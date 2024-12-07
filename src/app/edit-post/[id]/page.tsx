@@ -2,7 +2,7 @@
 
 import { usePost } from "@/api/post/getPost";
 import { useUpdatePost } from "@/api/post/updatePost";
-import PostForm from "@/components/PostForm";
+import PostForm from "@/components/posts/PostForm";
 import { useParams } from "next/navigation";
 import React from "react";
 import { PostFormInput } from "../../../types/post";

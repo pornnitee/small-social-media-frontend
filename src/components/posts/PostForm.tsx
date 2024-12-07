@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { PostFormInput } from "../types/post";
+import { PostFormInput } from "../../types/post";
 
 type Props = {
   handleSubmit: (value: PostFormInput) => void;

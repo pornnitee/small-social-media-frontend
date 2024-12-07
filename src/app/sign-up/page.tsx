@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRegister } from "../../api/auth/register";
-import RegisterForm from "../../components/RegisterForm";
+import RegisterForm from "../../components/auth/RegisterForm";
 
 interface RegisterData {
   email: string;

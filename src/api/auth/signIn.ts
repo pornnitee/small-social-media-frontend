@@ -32,7 +32,6 @@ export const useSignIn = () => {
   return useMutation<Response, Error, Payload>({
     mutationFn: signIn,
     onSuccess(response: Response) {
-      console.error(response, "responsesss");
       localStorage.setItem("token", response.token);
       localStorage.setItem("user_id", response.user.id);
       localStorage.setItem("user_name", response.user.user_name);

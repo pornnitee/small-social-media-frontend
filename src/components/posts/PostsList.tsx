@@ -3,12 +3,12 @@
 import Link from "next/link";
 import moment from "moment";
 import { useQueryClient } from "@tanstack/react-query";
-import { Post } from "../types/post";
+import { Post } from "../../types/post";
 import { useEffect, useState } from "react";
-import { usePosts } from "../api/post/getPosts";
-import { useDeletePost } from "../api/post/deletePost";
+import { usePosts } from "../../api/post/getPosts";
+import { useDeletePost } from "../../api/post/deletePost";
 
-export default function Posts() {
+export default function PostsList() {
   const { data } = usePosts();
   const { mutate: onDelete } = useDeletePost();
   const queryClient = useQueryClient();
