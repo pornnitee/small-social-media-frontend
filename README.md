@@ -1,10 +1,9 @@
 # Small Social Media Front-end
 
-The rails API back-end can be found here:
-[https://github.com/pornnitee/small-social-media-backend](https://github.com/pornnitee/small-social-media-backend)
+The Rails API backend is here: [Back-end](https://github.com/pornnitee/small-social-media-backend) 
 
 # Setup
- * install dependencies
+ * Install dependencies
 ```shell
 npm install
 ```
