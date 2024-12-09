@@ -26,7 +26,7 @@ const Navbar = () => {
       const userName = localStorage.getItem("user_name");
       setValue({ userName, userId });
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <nav className="bg-gray-800 p-4">
